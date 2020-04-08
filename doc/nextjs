@@ -22,8 +22,7 @@ Nextjs is a framework.
 - Supports to custom: server, routing, plugin,..
 - Can be used in the production
 
-3) How is it?
-3.1 Pages
+3 Pages
 A page is a react component. It is saved in the 'pages' directory.
 There is a route for each page on its file name.
 
@@ -35,7 +34,7 @@ Pre-rendering types:
 
 You can "choose" which rendering style to use: Static, Server-side, or Client-side rendering.
 
-3.1.1 Static Generation
+3.1 Static Generation
 By running: ```next build```
 
 - Only static content: just generate html.
@@ -57,7 +56,7 @@ Usage: whenever possible
 - E-commerce product listings
 - Help and documentation
 
-3.1.2 Server-side Rendering
+3.2 Server-side Rendering
 page file must export an async getServerSideProps() function. This function is invoked by the server for each request.
 
 SSG: static side generation.
@@ -82,13 +81,36 @@ context {
 getInitialProps() function should not be used from nextjs 9.3, use getStaticProps() or getServerSideProps()
 Known issue: https://github.com/zeit/next.js/issues/11014
 
-useSWR() hook function fetches data at client side. https://swr.now.sh/
+If a page does not have getInitialProps() function, nextjs can automatic generate html for this page.
 
-3.2 Custom default pages
-_app.js: inject global things: global style sheet, i18n,..
-_error.js: custom error page
+useSWR() hook function fetches data at client side. https://swr.now.sh/
 
 4. Routing
 Link component from next/link.
 href - The name of the page in the pages directory. For example /posts/[id].
 as - The url that will be shown in the browser. For example /posts/1.
+
+5. Custom
+- Babel: .babelrc file
+
+- PostCSS: postcss.config.json file
+
+- Server: server.js. 
+To inject middleware.
+Run as a node app: node server.js
+ https://nextjs.org/docs/advanced-features/custom-server
+
+- App: _app.js file
+if _app has getInitialProps() -> no automatic generate html
+Persisting layout between page changes
+Keeping state when navigating pages
+Custom error handling using componentDidCatch
+Inject additional data into pages
+Add global CSS
+
+- Document: _document.js file.
+Use to custom the html, body tags.
+if _document has getInitialProps() -> ctx.req will be undefined for pages that are prerendered.
+https://nextjs.org/docs/advanced-features/custom-document
+
+- Error: _error.js file
