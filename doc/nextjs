@@ -1,0 +1,45 @@
+Next.js
+
+1) Why is it?
+Rendering at the server side: MVC,..
++ SEO engine supports well
+- It takes long time for response
+
+Rendering at client side: React, Angular,..
++ Response extreme fast
+- First paint: takes much time to download resources
+- SEO engine does not work well on
+
+Isomorphic (hybrid) web application: pre-rendering which is needed for SEO or can be eager loaded at server side, render remaining things at client side.
+Nextjs goes here.
+
+2) What is it?
+Nextjs is a framework.
+- Supports to pre-render at server side for React applications
+- Export to a static app (html, css, javascript,..)
+- CSS-in-JS
+- Zero configuration
+- Supports to custom: server, routing, plugin,..
+- Can be used in the production
+
+3) How is it?
+3.1 Pages
+A page is a react component. It is saved in the 'pages' directory.
+There is a route for each page on its file name.
+
+By default, Nextjs pre-renders every page.
+
+Pre-rendering types:
+- Static Generation: html is generated at build time.
+- Server-side Rendering: html is generated on each request.
+
+You can "choose" which rendering style to use: Static, Server-side, or Client-side rendering.
+
+3.1.1 Static Generation
+By running: ```next build```
+
+- Only static content: just generate html.
+- Need data for page
+-> page file must export an async getStaticProps() function. This function will pull the data and return an object that has a ```props``` property.
+- Need dynamic urls
+-> page file must export an async getStaticPaths() function. This function will return an object that has a ```paths``` property.
