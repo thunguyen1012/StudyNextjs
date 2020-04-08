@@ -39,7 +39,10 @@ You can "choose" which rendering style to use: Static, Server-side, or Client-si
 By running: ```next build```
 
 - Only static content: just generate html.
+~/.next/server/static/<build id>/pages/index.html
+
 - Need data for page
 -> page file must export an async getStaticProps() function. This function will pull the data and return an object that has a ```props``` property.
+
 - Need dynamic urls
 -> page file must export an async getStaticPaths() function. This function will return an object that has a ```paths``` property.

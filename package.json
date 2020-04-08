@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "debug": "NODE_OPTIONS='--inspect=localhost:9229' next"
   },
   "keywords": [],
   "author": "NQT",
