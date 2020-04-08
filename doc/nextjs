@@ -57,5 +57,32 @@ Usage: whenever possible
 - E-commerce product listings
 - Help and documentation
 
-3.1.1 Server-side Rendering
+3.1.2 Server-side Rendering
 page file must export an async getServerSideProps() function. This function is invoked by the server for each request.
+
+SSG: static side generation.
+
+getStaticProps() function makes json file this is props while generation. This json data is passed to page component as props.
+in dev, getStaticProps() function will be called on every request.
+
+getStaticPaths() function returns object that includes 'fallback' property.
+fallback: false -> 404 when page of requesting route wasn't generated.
+fallback: true -> new page will be generated when page of requesting route wasn't generated.
+
+getServerSideProps() function has a parameter: context
+context {
+    params,
+    req,
+    res,
+    query,
+    preview,
+    previewData
+}
+
+useSWR() hook function fetches data at client side. https://swr.now.sh/
+
+3.2 Custom default pages
+_app.js: inject global things: global style sheet, i18n,..
+_error.js: custom error page
+
+4. Routing
