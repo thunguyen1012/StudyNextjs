@@ -46,3 +46,6 @@ By running: ```next build```
 
 - Need dynamic urls
 -> page file must export an async getStaticPaths() function. This function will return an object that has a ```paths``` property.
+
+dynamic route + static page: no need getStaticProps, getStaticPaths
+dynamic route + dynamic page: need both getStaticProps, getStaticPaths
