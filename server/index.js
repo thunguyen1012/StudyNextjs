@@ -24,12 +24,15 @@ const posts = [
   },
 ];
 
-app.get('/', (req, res) => res.send('Hello World!'));
-app.get('/posts', (req, res) => res.send(posts));
 app.get('/posts/:id', (req, res) => {
   const post = posts.find((p) => p.id === Number(req.params.id));
   res.send(post);
 });
+
+app.get('/posts', (req, res) => res.send(posts));
+app.get('/now', (req, res) => res.send({ now: new Date() }));
+
+app.get('/', (req, res) => res.send('Hello World!'));
 
 app.listen(port, () =>
   console.log(`Example app listening at http://localhost:${port}`)
