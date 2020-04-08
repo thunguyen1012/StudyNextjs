@@ -1,0 +1,27 @@
+ul.top-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.top-menu li {
+  float: left;
+}
+
+.top-menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.top-menu li a:hover {
+  background-color: #111111;
+}
+
+.content-container {
+    padding: 16px;
+}

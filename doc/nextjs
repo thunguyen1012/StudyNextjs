@@ -79,6 +79,9 @@ context {
     previewData
 }
 
+getInitialProps() function should not be used from nextjs 9.3, use getStaticProps() or getServerSideProps()
+Known issue: https://github.com/zeit/next.js/issues/11014
+
 useSWR() hook function fetches data at client side. https://swr.now.sh/
 
 3.2 Custom default pages
@@ -86,3 +89,6 @@ _app.js: inject global things: global style sheet, i18n,..
 _error.js: custom error page
 
 4. Routing
+Link component from next/link.
+href - The name of the page in the pages directory. For example /posts/[id].
+as - The url that will be shown in the browser. For example /posts/1.
