@@ -140,7 +140,7 @@ Common hook: useState, useEffect, useContext, useReducer
 
 2.1 Rules
 Only call Hooks at the top level. Don’t call Hooks inside loops, conditions, or nested functions.
-Only call Hooks from React function components.
+Only call Hooks from React functional component.
 
 2.2 useState
 - parameter: anything
@@ -156,4 +156,6 @@ effects scheduled by useEffect don't block the browser from updating the screen.
 By default clean up is run when component unmounts, before re-running the effect due to a subsequent render.
 Can skip effect by the second parameter: if changed then do the effect. an empty array -> do the effect only once
 
-
+2.4 others
+https://reactjs.org/docs/hooks-reference.html
+https://www.apollographql.com/docs/react/api/react-hooks/
