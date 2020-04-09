@@ -114,3 +114,26 @@ if _document has getInitialProps() -> ctx.req will be undefined for pages that a
 https://nextjs.org/docs/advanced-features/custom-document
 
 - Error: _error.js file
+
+#####################################
+React hook
+
+0) Context
+Full react life cycle
+http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+Class Component vs Functional Component
+
+1) What is it?
+React hook (react 16.8) is a tool allow use state and do some features without writing class component.
+- Reuse stateful logic
+Old way: render props, HOC -> wrapper hell
+New way: react hook
+
+- Do side effect (fetch data, register event handler,..) and clean up.
+Old way: componentDidMount, componentDidUpdate, and componentWillUnmount
+New way: react hook: useEffect
+
+2) How is it?
+Functional Component
+Common hook: useState, useEffect

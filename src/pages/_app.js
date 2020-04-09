@@ -23,6 +23,11 @@ class Root extends App {
               <a>Now</a>
             </Link>
           </li>
+          <li>
+            <Link href='/hooks'>
+              <a>React Hook</a>
+            </Link>
+          </li>
         </ul>
         <div className='content-container'>
           <Component {...pageProps} />
