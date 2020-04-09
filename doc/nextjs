@@ -130,10 +130,30 @@ React hook (react 16.8) is a tool allow use state and do some features without w
 Old way: render props, HOC -> wrapper hell
 New way: react hook
 
-- Do side effect (fetch data, register event handler,..) and clean up.
+- Do side effect (fetch data, register event handler, update DOM,..) and clean up.
 Old way: componentDidMount, componentDidUpdate, and componentWillUnmount
 New way: react hook: useEffect
 
 2) How is it?
 Functional Component
-Common hook: useState, useEffect
+Common hook: useState, useEffect, useContext, useReducer
+
+2.1 Rules
+Only call Hooks at the top level. Don’t call Hooks inside loops, conditions, or nested functions.
+Only call Hooks from React function components.
+
+2.2 useState
+- parameter: anything
+- declare a state variable.
+- preserve state, update state function between the function calls by React.
+
+2.3 useEffect
+useEffect(effectFn, [any]);
+
+do somethings after update DOM.
+every time component is re-rendered, react schedules a different effect, replaces the previous one.
+effects scheduled by useEffect don't block the browser from updating the screen.
+By default clean up is run when component unmounts, before re-running the effect due to a subsequent render.
+Can skip effect by the second parameter: if changed then do the effect. an empty array -> do the effect only once
+
+
