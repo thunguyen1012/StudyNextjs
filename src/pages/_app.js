@@ -1,12 +1,27 @@
 import '../resources/style.css';
+import ThemeContext, { themes } from '../themes';
 import App from 'next/app';
 import Link from 'next/link';
 
 class Root extends App {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      theme: themes.dark,
+    };
+  }
+
+  changeTheme = () => {
+    const nextTheme =
+      this.state.theme === themes.dark ? themes.light : themes.dark;
+    this.setState({ theme: nextTheme });
+  };
+
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <>
+      <ThemeContext.Provider value={this.state.theme}>
         <ul className='top-menu'>
           <li>
             <Link href='/'>
@@ -28,11 +43,14 @@ class Root extends App {
               <a>React Hook</a>
             </Link>
           </li>
+          <li>
+            <a onClick={this.changeTheme}>Change Theme</a>
+          </li>
         </ul>
         <div className='content-container'>
           <Component {...pageProps} />
         </div>
-      </>
+      </ThemeContext.Provider>
     );
   }
 }

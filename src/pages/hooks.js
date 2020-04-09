@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import ThemeContext from "../themes";
 
 function HookExamples() {
+  const theme = useContext(ThemeContext);
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(0);
   useEffect(() => {
@@ -17,7 +19,11 @@ function HookExamples() {
       <p>You clicked {count} times</p>
       <p>You clicked 2 {count2} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
-      <button onClick={() => setCount2(count2 + 1)}>Click me 2</button>
+      <button
+        style={{ background: theme.background, color: theme.foreground }}
+        onClick={() => setCount2(count2 + 1)}>
+        Click me 2
+      </button>
     </div>
   );
 }
