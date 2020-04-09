@@ -159,3 +159,12 @@ Can skip effect by the second parameter: if changed then do the effect. an empty
 2.4 others
 https://reactjs.org/docs/hooks-reference.html
 https://www.apollographql.com/docs/react/api/react-hooks/
+
+######################################
+Recharts
+
+A composable charting library built on React components
+Built on top of SVG elements with a lightweight dependency on D3 submodules.
+
+https://recharts.org/en-US/api/CartesianAxis
+/Users/thuqnguyen/Projects/FunWithCovid
